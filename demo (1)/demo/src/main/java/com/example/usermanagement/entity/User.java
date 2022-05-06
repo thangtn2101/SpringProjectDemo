@@ -1,8 +1,7 @@
 package com.example.usermanagement.entity;
 
-
-
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @Entity
@@ -13,14 +12,21 @@ public class User {
     @Column(name = "Id")
     private int id;
     @Column(name = "Name")
+    @NotNull(message = "Name could not empty")
     private String name;
     @Column(name = "Gender")
+    @NotNull(message = "Gender could not empty")
     private String gender ;
+
     @Column(name = "Birth")
+    @NotNull(message = "Birth could not empty")
     private Date dob;
+
     @Column(name = "Phone")
+    @NotNull(message = "Phone could not empty")
     private int phoneNumber;
     @Column(name = "Email")
+    @NotNull(message = "Email could not empty")
     private String email;
     @Column(name = "Address")
     private String address;

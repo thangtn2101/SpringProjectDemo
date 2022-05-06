@@ -2,8 +2,10 @@ package com.example.usermanagement.controller;
 
 import com.example.usermanagement.entity.User;
 import com.example.usermanagement.service.UserService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +27,7 @@ public class UserController {
         return userService.findUserById(id);
     }
     @PostMapping
-    public User addUser(@RequestBody User user){
+    public User addUser(@RequestBody @Valid User user){
         return userService.addUser(user);
     }
 
